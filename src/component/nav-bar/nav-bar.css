@@ -1,0 +1,32 @@
+/* NavBar Styles */
+.navbar {
+  background: linear-gradient(45deg, #ff8c00, #ff5f00);
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffdf59;
+}
+
+.navbar-nav .nav-link svg {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}

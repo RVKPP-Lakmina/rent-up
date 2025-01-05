@@ -1,0 +1,7 @@
+.dummy-content {
+  height: 150vh; /* Simulates content height for scrolling */
+}
+
+.container {
+  max-width: 960px;
+}

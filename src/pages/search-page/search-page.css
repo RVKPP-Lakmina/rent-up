@@ -1,0 +1,84 @@
+.app {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.main-list,
+.favorite-list {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow-y: auto;
+  max-height: 500px;
+  padding: 16px;
+}
+
+.card {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card.dragging {
+  opacity: 0.5;
+}
+
+.card-left {
+  margin-right: 10px;
+}
+
+.cover-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-right {
+  flex: 1;
+}
+
+.favorite-btn,
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #f00;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.favorite-list {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.favorite-drop-zone {
+  min-height: 150px;
+  padding: 10px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+}
+
+.favorite-drop-zone.highlight {
+  background-color: #f9f9f9;
+  border-color: #f00;
+}
+
+.custom-tabs .nav-link {
+  color: black !important;
+}
+
+.bg-color-custom {
+  background-color: #ff5f00;
+  color: white;
+}
+
+.custom-tabs .nav-link.active {
+  color: #ff5f00 !important;
+}

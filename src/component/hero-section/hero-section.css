@@ -1,0 +1,83 @@
+.hero-page {
+  /* background: linear-gradient(135deg, #ff8c00, #ff5f00); */
+  background: url("/images/flat-1.jpeg");
+  background-size: cover;
+  object-fit: cover;
+  height: 80vh;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  padding: 2rem;
+}
+
+.search-section {
+  flex: 1;
+  max-width: 500px;
+  background: #ff5f00;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.search-section h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.react-tabs__tab-list {
+  display: flex;
+  justify-content: center;
+  border-bottom: none;
+}
+
+.react-tabs__tab {
+  list-style: none;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.react-tabs__tab--selected {
+  font-weight: bold;
+  border-bottom: 3px solid #ffdf59;
+}
+
+.filters .form-control {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.filters .form-control:focus {
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  color: white;
+}
+
+.filters .btn-warning {
+  background-color: #ffdf59;
+  color: black;
+  border-radius: 5px;
+}
+
+.image-slider img {
+  width: 100%;
+  max-height: 400px; /* Adjust this value based on your design */
+  object-fit: cover; /* Ensures the image scales properly */
+}
+
+@media (max-width: 768px) {
+  .hero-page {
+    flex-direction: column;
+  }
+
+  .image-slider {
+    display: none;
+  }
+
+  .search-section {
+    width: 100%;
+  }
+}

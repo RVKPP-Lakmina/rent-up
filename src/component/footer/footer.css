@@ -1,0 +1,28 @@
+/* Footer Styles */
+footer {
+  background: #212529;
+  color: #fff;
+}
+
+footer .social-icons {
+  margin-top: 10px;
+}
+
+footer .social-icons .icon {
+  font-size: 1.5rem;
+  margin: 0 15px;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+footer .social-icons .icon:hover {
+  color: #ffdf59;
+}
+
+@media (max-width: 767px) {
+  footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+}
