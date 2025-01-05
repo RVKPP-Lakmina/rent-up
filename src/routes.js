@@ -21,6 +21,10 @@ export const routes = [
         path: "/search/:id",
         Component: lazy(() => import("./component/EstateDetails")),
       },
+      {
+        path: "/about-us",
+        Component: lazy(() => import("./pages/about-us/AboutUs")),
+      },
     ],
   },
 ];

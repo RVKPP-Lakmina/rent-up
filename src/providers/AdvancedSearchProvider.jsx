@@ -42,7 +42,6 @@ export const AdvancedSearchProvider = ({ children }) => {
 
     if (favorites.length === 0 && allItems.length === 0) {
       localStorage.setItem("allItems", JSON.stringify(items));
-      return;
     }
 
     setItems(allItems);

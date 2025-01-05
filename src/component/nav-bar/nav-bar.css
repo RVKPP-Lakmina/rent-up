@@ -21,6 +21,10 @@
   color: #ffdf59;
 }
 
+.active {
+  color: #ffdf59;
+}
+
 .navbar-nav .nav-link svg {
   font-size: 1.3rem;
 }
