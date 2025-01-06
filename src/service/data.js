@@ -16,7 +16,6 @@ export const propertiesData = {
         "images/page-images/1/1.2.jpg",
         "images/page-images/1/1.3.jpg",
         "images/page-images/1/1.4.jpg",
-        "images/page-images/1/1.5.jpg",
         "images/page-images/1/1.6.jpg",
         "images/page-images/1/1.7.jpg",
         "images/page-images/1/1.8.jpg",

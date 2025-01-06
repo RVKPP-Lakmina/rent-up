@@ -52,10 +52,10 @@ const EstateDetails = () => {
           <h3>{data.type} Details</h3>
 
           <LightboxGallery
-            images={data.picturePanel.map((item) => ({
+            images={data.picturePanel.map((item, index) => ({
               thumbnail: item,
               full: item,
-              caption: item,
+              caption: `${data.title} - Image ${index + 1}`,
             }))}
           />
           {/* <Slider {...sliderSettings}>
