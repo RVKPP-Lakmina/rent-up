@@ -3,6 +3,35 @@ import CardComponent from "./CardComponent ";
 import { useDrop } from "react-dnd";
 import { useAdvancedSearch } from "../providers/AdvancedSearchProvider";
 
+/**
+ * FavoriteList component renders a list of favorite items.
+ * 
+ * This component uses the `useAdvancedSearch` hook to manage the state of favorite items,
+ * including adding and removing items from the favorites list. It also integrates with
+ * the `useDrop` hook from react-dnd to handle drag-and-drop functionality.
+ * 
+ * @component
+ * @example
+ * // Example usage:
+ * // <FavoriteList />
+ * 
+ * @returns {JSX.Element} The rendered FavoriteList component.
+ * 
+ * @remarks
+ * - The component displays a header with the count of favorite items.
+ * - The favorites list is scrollable and has a maximum height of 400px.
+ * - If there are no favorite items, a message is displayed to the user.
+ * 
+ * @hook
+ * @function useAdvancedSearch
+ * @returns {Object} An object containing the favorites array, addToFavorites function,
+ * removeFromFavorites function, and itemMap.
+ * 
+ * @hook
+ * @function useDrop
+ * @param {Object} options - The options object for configuring the drop behavior.
+ * @returns {Array} An array containing the collected properties and the drop ref.
+ */
 const FavoriteList = () => {
   const { favorites, addToFavorites, removeFromFavorites, itemMap } =
     useAdvancedSearch();

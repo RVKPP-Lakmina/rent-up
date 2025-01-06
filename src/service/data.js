@@ -237,6 +237,7 @@ export const propertiesData = {
     {
       id: "prop10",
       type: "House",
+      title: "Six-Bedroom Period Property in Shoreham Village",
       bedrooms: 6,
       price: 1850000,
       tenure: "Freehold",

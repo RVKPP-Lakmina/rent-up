@@ -9,11 +9,13 @@ const AdvancedSearchForm = () => {
     savedSearchParams.current.dateFilterType
   );
 
+  // Handle input change for form fields
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     savedSearchParams.current[name] = value;
   };
 
+  // Trigger search with current parameters
   const handleSearch = () => {
     filterList();
   };
@@ -175,6 +177,7 @@ export const AdvancedSearch = () => {
   const { filtersSectionActive, setFiltersSectionActive } = useAdvancedSearch();
   return (
     <>
+      {/* Offcanvas for mobile view */}
       <div
         className={`offcanvas offcanvas-end ${
           filtersSectionActive ? "show" : ""
@@ -201,6 +204,7 @@ export const AdvancedSearch = () => {
         </div>
       </div>
 
+      {/* Sidebar for desktop view */}
       <div className="d-none d-md-block col-md-4 py-5">
         <AdvancedSearchForm />
       </div>

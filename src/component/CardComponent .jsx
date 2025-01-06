@@ -38,7 +38,7 @@ const CardComponent = ({ item, onFavorite, onDelete, draggable, favorite }) => {
         {/* Right: Content */}
         <div className="col-md-8 d-flex flex-column">
           <div className="card-body">
-            <h5 className="card-title">{item.location}</h5>
+            <h5 className="card-title">{item.title}</h5>
             <p className="card-text">
               <small className="text-muted">{item.bedrooms} Bedrooms</small>
             </p>

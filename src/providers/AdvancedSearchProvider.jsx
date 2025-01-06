@@ -22,6 +22,36 @@ const itemMap = new Map(
   propertiesData.properties.map((item) => [item.id, item])
 );
 
+/**
+ * AdvancedSearchProvider component provides context for advanced search functionality.
+ * It manages the state of items, favorites, search parameters, and filters.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {React.ReactNode} props.children - The child components.
+ *
+ * @returns {JSX.Element} The AdvancedSearchProvider component.
+ *
+ * @example
+ * <AdvancedSearchProvider>
+ *   <YourComponent />
+ * </AdvancedSearchProvider>
+ *
+ * @context
+ * @property {Array} items - The list of item IDs.
+ * @property {Array} favorites - The list of favorite item IDs.
+ * @property {Function} addToFavorites - Function to add an item to favorites.
+ * @property {Function} removeFromFavorites - Function to remove an item from favorites.
+ * @property {Map} itemMap - Map of item details.
+ * @property {Function} clearSearch - Function to clear search parameters.
+ * @property {Function} filterList - Function to filter the list of items based on search parameters.
+ * @property {Object} searchParams - The current search parameters.
+ * @property {Object} savedSearchParams - The saved search parameters.
+ * @property {boolean} filtersSectionActive - State indicating if the filters section is active.
+ * @property {Function} setFiltersSectionActive - Function to set the filters section active state.
+ * @property {boolean} favoritesSectionActive - State indicating if the favorites section is active.
+ * @property {Function} setFavoritesSectionActive - Function to set the favorites section active state.
+ */
 export const AdvancedSearchProvider = ({ children }) => {
   const [items, setItems] = useState(Array.from(itemMap.keys()));
   const [favorites, setFavorites] = useState([]);
