@@ -6,8 +6,6 @@ const MobileNavbar = () => {
   const location = useLocation();
   const { pathname } = location;
 
-  console.log(pathname);
-
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
       <div className="container">

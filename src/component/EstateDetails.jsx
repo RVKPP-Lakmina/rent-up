@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import LightboxGallery from "./LightboxGallery";
 import { useMemo } from "react";
+import { useEffect, useState } from "react";
 
 // Google Maps container styles
 const containerStyle = {
@@ -16,17 +17,44 @@ const containerStyle = {
 const EstateDetails = () => {
   let { id } = useParams();
   const estateData = useMemo(() => propertiesData.properties, []);
+  const [location, setLocation] = useState({ lat: 0, lng: 0 });
+  const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+  // Google Maps Loader
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: API_KEY,
+  });
 
   // Check if ID matches
   const data = useMemo(
     () => estateData.find((item) => item.id === id),
     [estateData, id]
   );
+  const address = useMemo(() => data.location, [data]);
 
-  // Google Maps Loader
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
-  });
+  // Fetch coordinates from the Geocoding API
+  useEffect(() => {
+    const fetchCoordinates = async () => {
+      const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
+        address
+      )}&key=${API_KEY}`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.status === "OK") {
+          const { lat, lng } = data.results[0].geometry.location;
+          setLocation({ lat, lng });
+        } else {
+          console.error("Geocoding failed:", data.status);
+        }
+      } catch (error) {
+        console.error("Error fetching coordinates:", error);
+      }
+    };
+
+    fetchCoordinates();
+  }, [address]);
 
   if (!data) {
     return <div>No Property Found</div>;
@@ -191,10 +219,10 @@ const EstateDetails = () => {
             {isLoaded ? (
               <GoogleMap
                 mapContainerStyle={containerStyle}
-                center={{ lat: 51.388, lng: 0.088 }}
+                center={location}
                 zoom={15}
               >
-                <Marker position={{ lat: 51.388, lng: 0.088 }} />
+                <Marker position={location} />
               </GoogleMap>
             ) : (
               <p style={{ color: "gray" }}>Loading Map...</p>

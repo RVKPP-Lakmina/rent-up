@@ -69,6 +69,12 @@ export const AdvancedSearchProvider = ({ children }) => {
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     const allItems = JSON.parse(localStorage.getItem("allItems")) || [];
+    const savedSearchParams =
+      JSON.parse(localStorage.getItem("savedSearchParams")) || undefined;
+
+    if (savedSearchParams) {
+      savedSearchParams.current = savedSearchParams;
+    }
 
     if (favorites.length === 0 && allItems.length === 0) {
       localStorage.setItem("allItems", JSON.stringify(items));
@@ -97,6 +103,7 @@ export const AdvancedSearchProvider = ({ children }) => {
 
   const clearSearch = () => {
     activeFilters.current = false;
+    localStorage.removeItem("savedSearchParams");
     setSearchParams(JSON.parse(JSON.stringify(defaultSearchParams)));
     setItems(Array.from(itemMap.keys()));
   };
@@ -114,6 +121,11 @@ export const AdvancedSearchProvider = ({ children }) => {
       endDate,
       postcode,
     } = savedSearchParams.current;
+
+    localStorage.setItem(
+      "savedSearchParams",
+      JSON.stringify(savedSearchParams.current)
+    );
 
     if (type !== "any")
       filtered = filtered.filter(
