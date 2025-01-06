@@ -4,6 +4,7 @@ import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import { propertiesData } from "../service/data";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import LightboxGallery from "./LightboxGallery";
 
 // Google Maps container styles
 const containerStyle = {
@@ -20,7 +21,7 @@ const EstateDetails = () => {
 
   // Google Maps Loader
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyAGwxdsoc6fOtS0pBV_FV8g45wRxukJt9Q",
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   });
 
   if (!data) {
@@ -39,14 +40,14 @@ const EstateDetails = () => {
   return (
     <div className="estate-details container py-5">
       <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
             <Link className="nav-link" to="/search" style={{ color: "orange" }}>
               Search
             </Link>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">
-            Library
+          <li className="breadcrumb-item active" aria-current="page">
+            Item
           </li>
         </ol>
       </nav>
@@ -54,17 +55,26 @@ const EstateDetails = () => {
         {/* Left Column - Image Slider */}
         <div className="col-lg-6 mb-4">
           <h3>{data.type} Details</h3>
-          <Slider {...sliderSettings}>
+
+          <LightboxGallery
+            images={data.picturePanel.map((item) => ({
+              thumbnail: item,
+              full: item,
+              caption: item,
+            }))}
+          />
+          {/* <Slider {...sliderSettings}>
             {data.picturePanel.map((pic, index) => (
               <div key={index}>
+                {console.log(pic)}
                 <img
-                  src={pic}
+                  src={"images/page-images/1/1.1.jpg"}
                   alt={`Property Image ${index + 1}`}
                   className="img-fluid rounded"
                 />
               </div>
             ))}
-          </Slider>
+          </Slider> */}
         </div>
 
         {/* Right Column - Property Details */}
