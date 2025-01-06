@@ -114,7 +114,7 @@ Contributions are welcome! Feel free to submit a pull request or report issues i
 
 ---
 
-## 📬 Contact
+## 📮 Contact
 
 If you have any questions or feedback, feel free to reach out:
 
