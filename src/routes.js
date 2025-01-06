@@ -19,7 +19,7 @@ export const routes = [
       },
       {
         path: "/search/:id",
-        Component: lazy(() => import("./component/EstateDetails")),
+        Component: lazy(() => import("./pages/search-page/SingleItemPage")),
       },
       {
         path: "/about-us",
