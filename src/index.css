@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: poppins;
-  src: url(fonts/Poppins-Medium.ttf);
+  src: url(../public/fonts/Poppins-Medium.ttf);
 }
 
 @font-face {
   font-family: bold;
-  src: url(fonts/Poppins-Bold.ttf);
+  src: url(../public/fonts/Poppins-Bold.ttf);
 }
 
 * {

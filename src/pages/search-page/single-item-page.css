@@ -1,0 +1,65 @@
+.lightbox-modal {
+  position: fixed; /* Ensures the modal stays in place relative to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  z-index: 1000; /* Make sure it stays on top of other elements */
+  display: flex; /* Center the content horizontally and vertically */
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content {
+  position: relative; /* To position elements like buttons within the modal */
+  max-width: 90%; /* Restrict the content width */
+  max-height: 90%; /* Restrict the content height */
+  overflow: hidden; /* Hide content overflow */
+}
+
+.lightbox-slide img {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the image fits within the container */
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15%;
+  right: 20px;
+  padding: 5px;
+  color: orange;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10000; /* Above other modal content */
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.lightbox-prev {
+  left: 10px;
+}
+
+.lightbox-next {
+  right: 10px;
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+}

@@ -24,7 +24,7 @@ const LightboxGallery = ({ images }) => {
         {images.map((image, index) => (
           <div key={index} className="col-6 col-md-3 mb-4">
             <img
-              src={image}
+              src={`../../public/${image.thumbnail}`}
               alt={`Thumbnail ${index + 1}`}
               className="img-thumbnail gallery-thumbnail"
               onClick={() => openModal(index)}
@@ -35,13 +35,14 @@ const LightboxGallery = ({ images }) => {
 
       {isOpen && (
         <div className="lightbox-modal">
-          <span className="lightbox-close" onClick={closeModal}>
-            &times;
-          </span>
+          <button className="lightbox-close" onClick={closeModal}>
+            <span aria-hidden="true">&times;</span>{" "}
+            {/* Add this for screen readers */}
+          </button>
           <div className="lightbox-content">
             <div className="lightbox-slide">
               <img
-                src={""}
+                src={`../../public/${images[currentIndex].full}`}
                 alt={`Slide ${currentIndex + 1}`}
                 className="img-fluid"
               />
