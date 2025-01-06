@@ -10,6 +10,7 @@ export const propertiesData = {
       description:
         "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London...",
       location: "Petts Wood Road, Petts Wood, Orpington BR5",
+      floorPlan: "images/page-images/floor-1.jpg",
       picture: "images/page-images/1/1.1.jpg",
       picturePanel: [
         "images/page-images/1/1.1.jpg",
@@ -36,6 +37,7 @@ export const propertiesData = {
       id: "prop2",
       type: "Flat",
       title: "Madison Main Street Retreat Dogs Welcome",
+      floorPlan: "images/page-images/floor-2.jpg",
       bedrooms: 2,
       price: 399995,
       tenure: "Freehold",
@@ -59,6 +61,7 @@ export const propertiesData = {
       id: "prop3",
       type: "Apartment",
       title: "Modern Apartment in Bromley Town Center",
+      floorPlan: "images/page-images/floor-4.jpg",
       bedrooms: 1,
       price: 250000,
       tenure: "Leasehold",
@@ -85,6 +88,7 @@ export const propertiesData = {
       type: "House",
       bedrooms: 4,
       price: 975000,
+      floorPlan: "images/page-images/floor-3.jpg",
       title: "East Main Lofts - Farmhouse 204",
       tenure: "Freehold",
       description:
@@ -109,6 +113,7 @@ export const propertiesData = {
       id: "prop5",
       type: "Bungalow",
       bedrooms: 3,
+      floorPlan: "images/page-images/floor-1.jpg",
       title: "Beautiful Bungalow on Main",
       price: 600000,
       tenure: "Freehold",
@@ -134,6 +139,7 @@ export const propertiesData = {
     {
       id: "prop6",
       type: "Flat",
+      floorPlan: "images/page-images/floor-5.jpg",
       title: "Black Pearl Stays - Saltburn Apartments",
       bedrooms: 1,
       price: 310000,
@@ -161,6 +167,7 @@ export const propertiesData = {
       id: "prop7",
       type: "House",
       bedrooms: 5,
+      floorPlan: "images/page-images/floor-6.jpg",
       title: "Luxury House in Ella",
       price: 1250000,
       tenure: "Freehold",
@@ -187,6 +194,7 @@ export const propertiesData = {
       id: "prop8",
       type: "Apartment",
       bedrooms: 2,
+      floorPlan: "images/page-images/floor-2.jpg",
       title: "The Residence",
       price: 420000,
       tenure: "Leasehold",
@@ -213,6 +221,7 @@ export const propertiesData = {
       type: "Flat",
       title: "Private Apartment in Colombo 5",
       bedrooms: 3,
+      floorPlan: "images/page-images/floor-4.jpg",
       price: 475000,
       tenure: "Leasehold",
       description:
@@ -239,6 +248,7 @@ export const propertiesData = {
       title: "Six-Bedroom Period Property in Shoreham Village",
       bedrooms: 6,
       price: 1850000,
+      floorPlan: "images/page-images/floor-3.jpg",
       tenure: "Freehold",
       description:
         "Stunning six-bedroom period property with character features, extensive gardens, and ample parking.",

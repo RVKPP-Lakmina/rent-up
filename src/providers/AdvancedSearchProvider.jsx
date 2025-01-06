@@ -131,17 +131,23 @@ export const AdvancedSearchProvider = ({ children }) => {
       filtered = filtered.filter(
         (item) => item.bedrooms <= Number(maxBedrooms)
       );
+
     if (dateFilterType === "after" && startDate) {
-      filtered = filtered.filter(
-        (item) => new Date(item.date) >= new Date(startDate)
-      );
+      filtered = filtered.filter((item) => {
+        const itemDate = new Date(
+          `${item.added.year}-${item.added.month}-${item.added.day}`
+        );
+        return itemDate >= new Date(startDate);
+      });
     } else if (dateFilterType === "between" && startDate && endDate) {
-      filtered = filtered.filter(
-        (item) =>
-          new Date(item.date) >= new Date(startDate) &&
-          new Date(item.date) <= new Date(endDate)
-      );
+      filtered = filtered.filter((item) => {
+        const itemDate = new Date(
+          `${item.added.year}-${item.added.month}-${item.added.day}`
+        );
+        return itemDate >= new Date(startDate) && itemDate <= new Date(endDate);
+      });
     }
+
     if (postcode)
       filtered = filtered.filter((item) =>
         item.location.toLowerCase().includes(postcode.toLowerCase())

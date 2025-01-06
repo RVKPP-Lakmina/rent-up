@@ -73,7 +73,7 @@ const EstateDetails = () => {
         </div>
 
         {/* Right Column - Property Details */}
-        <div className="col-lg-6">
+        <div className="col-lg-6" style={{ color: "gray" }}>
           <h4 style={{ color: "#ff5f00" }}>{data.title}</h4>
           <p>
             <strong>Location:</strong> {data.location}
@@ -96,7 +96,8 @@ const EstateDetails = () => {
           </p>
           <a
             // href={data.url}
-            className="btn btn-primary mt-3"
+            style={{ backgroundColor: "#ff5f00", color: "white" }}
+            className="btn mt-3"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -106,19 +107,113 @@ const EstateDetails = () => {
       </div>
 
       {/* Google Map Section */}
-      <div className="mt-5">
-        <h5>Property Location</h5>
-        {isLoaded ? (
-          <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={{ lat: 51.388, lng: 0.088 }}
-            zoom={15}
+      <div className="container mt-5">
+        {/* Tab Navigation */}
+        <ul className="nav nav-tabs" role="tablist">
+          <li className="nav-item">
+            <button
+              className="nav-link active"
+              id="description-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#description"
+              type="button"
+              role="tab"
+              aria-controls="description"
+              aria-selected="true"
+              style={{
+                color: "#ff5f00",
+                // borderColor: "#ff5f00",
+              }}
+            >
+              Description
+            </button>
+          </li>
+          <li className="nav-item">
+            <button
+              className="nav-link"
+              id="google-map-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#google-map"
+              type="button"
+              role="tab"
+              aria-controls="google-map"
+              aria-selected="false"
+              style={{
+                color: "#ff5f00",
+                // borderColor: "#ff5f00",
+              }}
+            >
+              Google Map
+            </button>
+          </li>
+          <li className="nav-item">
+            <button
+              className="nav-link"
+              id="floor-plan-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#floor-plan"
+              type="button"
+              role="tab"
+              aria-controls="floor-plan"
+              aria-selected="false"
+              style={{
+                color: "#ff5f00",
+                // borderColor: "#ff5f00",
+              }}
+            >
+              Floor Plan
+            </button>
+          </li>
+        </ul>
+
+        {/* Tab Content */}
+        <div className="tab-content mt-3">
+          <div
+            className="tab-pane fade show active"
+            id="description"
+            role="tabpanel"
+            aria-labelledby="description-tab"
           >
-            <Marker position={{ lat: 51.388, lng: 0.088 }} />
-          </GoogleMap>
-        ) : (
-          <p>Loading Map...</p>
-        )}
+            <h5 style={{ color: "gray" }}> Property Description</h5>
+            <p style={{ color: "gray" }}>{data.description}</p>
+            <p style={{ color: "gray" }}>
+              Added:
+              {` ${data.added.day} ${data.added.month}, ${data.added.year}`}
+            </p>
+          </div>
+          <div
+            className="tab-pane fade"
+            id="google-map"
+            role="tabpanel"
+            aria-labelledby="google-map-tab"
+          >
+            <h5 style={{ color: "gray" }}>Property Location</h5>
+            {isLoaded ? (
+              <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={{ lat: 51.388, lng: 0.088 }}
+                zoom={15}
+              >
+                <Marker position={{ lat: 51.388, lng: 0.088 }} />
+              </GoogleMap>
+            ) : (
+              <p style={{ color: "gray" }}>Loading Map...</p>
+            )}
+          </div>
+          <div
+            className="tab-pane fade"
+            id="floor-plan"
+            role="tabpanel"
+            aria-labelledby="floor-plan-tab"
+          >
+            <h5 style={{ color: "gray" }}>Floor Plan</h5>
+            <img
+              src={`../../public/${data.floorPlan}`}
+              alt="Floor Plan"
+              className="img-fluid rounded"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
